@@ -130,7 +130,7 @@ staging_songs_copy = ("""
 # FINAL TABLES
 
 songplay_table_insert = ("""INSERT INTO songplays (start_time, user_id, level, song_id, artist_id, session_id, location, user_agent)
-                         SELECT DISTINCT(TIMESTAMP 'epoch' + INTERVAL '1 second' * ts/1000) AS e.start_time,
+                         SELECT DISTINCT(TIMESTAMP 'epoch' + INTERVAL '1 second' * e.ts/1000) AS start_time,
                          e.userId AS user_id,
                          e.level,
                          s.song_id AS song_id,
@@ -165,23 +165,23 @@ song_table_insert = ("""INSERT INTO songs (song_id, title, artist_id, year, dura
 """)
 
 artist_table_insert = ("""INSERT INTO artists (artist_id, name, location, lattitude, longitude)
-                         SELECT artist_id
+                         SELECT artist_id,
                          artist_name AS name,
                          artist_location AS location,
-                         artist_lattitude,
+                         artist_latitude,
                          artist_longitude
                          FROM staging_songs_table
                          WHERE artist_id IS NOT NULL
 """)
 
-time_table_insert = ("""INSERT INTO times (start_time, hour, day, week, month, year, weekday)
+time_table_insert = ("""INSERT INTO time (start_time, hour, day, week, month, year, weekday)
                          SELECT DISTINCT(TIMESTAMP 'epoch' + INTERVAL '1 second' * ts/1000) AS start_time,
-                         EXTRACT(hour FROM start_time)                              AS hour,
-                         EXTRACT(day FROM start_time)                             AS day,
-                         EXTRACT(week FROM start_time)                               AS week,
-                         EXTRACT(month FROM start_time)                              AS month,
-                         EXTRACT(year FROM start_time)                               AS year,
-                         EXTRACT(ISODOW FROM start_time)                              AS weekday,                      
+                         DATE_PART('hour', start_time) AS hour,
+                         DATE_PART('day', start_time) AS day,
+                         DATE_PART('week', start_time) AS week,
+                         DATE_PART('month', start_time) AS month,
+                         DATE_PART('year', start_time) AS year,
+                         DATE_PART('dow', start_time) AS weekday
                          FROM staging_events_table
 """)
 
