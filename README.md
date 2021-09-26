@@ -97,6 +97,7 @@ Fields: start_time, hour, day, week, month, year, weekday
 
 ## Explanation of files
 __Files only work if a Cluster is up and running on Redshift__
+
 The project workspace includes six files:
 
 - create_tables.py drops and creates database tables. Resets tables prior to running the ETL- scripts.
@@ -106,7 +107,13 @@ The project workspace includes six files:
 
 ## How to run
 
-### The data-sources are provided by two S3 buckets You need a AWS Redshift Cluster up and running
+### The data-sources are provided by two S3 buckets 
+
+- Song data: s3://udacity-dend/song_data
+- Log data: s3://udacity-dend/log_data
+- Log data json path: s3://udacity-dend/log_json_path.json
+
+### You need a AWS Redshift Cluster up and running
 
 __Create Cluster__
 - Redshift dc2.large cluster with 4 nodes was used
