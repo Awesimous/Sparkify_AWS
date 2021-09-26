@@ -4,6 +4,12 @@ from sql_queries import create_table_queries, drop_table_queries
 
 
 def drop_tables(cur, conn):
+    """[This function drops all tables from Redshift db]
+
+    Args:
+        cur ([object]): [Cursor for database]
+        conn ([object]): [Connection to database]
+    """       
     for table, query in drop_table_queries.items():
         cur.execute(query)
         conn.commit()
@@ -11,6 +17,12 @@ def drop_tables(cur, conn):
 
 
 def create_tables(cur, conn):
+    """[This function creates all tables on defined Redshift db]
+
+    Args:
+        cur ([object]): [Cursor for database]
+        conn ([object]): [Connection to database]
+    """         
     for table, query in create_table_queries.items():
         cur.execute(query)
         conn.commit()
