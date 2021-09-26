@@ -68,6 +68,11 @@ Each json file in the song_data dataset stores info about one song. The song_dat
 # Database Design
 <img width="806" alt="grafik" src="https://user-images.githubusercontent.com/29717043/134798326-eee23f4f-f145-4166-b586-552ff2f790b3.png">
 
+### Explanation of colors:
+- Red: VARCHAR
+- Yellow: INTEGER / FLOAT
+- Green: TIMESTAMP
+
 ## Fact table
 
 __Table name: songplays__
