@@ -66,8 +66,7 @@ Each json file in the song_data dataset stores info about one song. The song_dat
 - song_data/A/A/B/TRAABJL12903CDCF1A.json 
 
 # Database Design
-
-![ScreenShot](https://raw.github.com/awesimous/repository/screenshots/DB_Schema)
+![Alt text](https://raw.github.com/awesimous/repository/screenshots/DB_Schema.jpg?raw=true "DB Schema for Sparkify")
 
 ## Fact table
 
