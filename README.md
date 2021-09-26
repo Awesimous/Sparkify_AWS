@@ -67,6 +67,8 @@ Each json file in the song_data dataset stores info about one song. The song_dat
 
 # Database Design
 
+![Alt text](/https://raw.github.com/awesimous/repository/screenshots/DB_Schema?raw=true "DB Schema")
+
 ## Fact table
 
 __Table name: songplays__
