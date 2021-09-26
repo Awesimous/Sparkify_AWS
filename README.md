@@ -69,6 +69,7 @@ Each json file in the song_data dataset stores info about one song. The song_dat
 <img width="806" alt="grafik" src="https://user-images.githubusercontent.com/29717043/134798326-eee23f4f-f145-4166-b586-552ff2f790b3.png">
 
 ### Explanation of colors:
+- Grey: Table names
 - Red: VARCHAR
 - Yellow: INTEGER / FLOAT
 - Green: TIMESTAMP
@@ -84,20 +85,15 @@ Dimensions
 
 __Table name: users__
 Fields: user_id, first_name, last_name, gender, level
-Datasource: log_data
 
 __Table name: songs__
 Fields: song_id, title, artist_id, year, duration
-Datasource: song_data
 
 __Table name: artists__
 Fields: artist_id, name, location, latitude, longitude
-Datasource: song_data
 
 __Table name: time__
 Fields: start_time, hour, day, week, month, year, weekday
-Datasource: log_data
-Files in repository
 
 ## Explanation of files
 __Files only work if a Cluster is up and running on Redshift__
