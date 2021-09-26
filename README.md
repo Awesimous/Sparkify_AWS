@@ -106,6 +106,15 @@ The project workspace includes six files:
 
 ## How to run
 
+### The data-sources are provided by two S3 buckets You need a AWS Redshift Cluster up and running
+
+__Create Cluster__
+- Redshift dc2.large cluster with 4 nodes was used
+- Include IAM role authorization mechanism,
+- The only policy attached to this IAM is AmazonS3ReadOnlyAccess
+- Make sure sure Redshift is has public access and VPC Secuirty Group Access.
+
+
 __Run the drive program main.py__
 
 - python main.py
