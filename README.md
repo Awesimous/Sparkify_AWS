@@ -119,7 +119,7 @@ __Create Cluster__
 - Redshift dc2.large cluster with 4 nodes was used
 - Include IAM role authorization mechanism,
 - The only policy attached to this IAM is AmazonS3ReadOnlyAccess
-- Make sure sure Redshift is has public access and VPC Secuirty Group Access.
+- Make sure Redshift has public access and VPC Secuirty Group access.
 
 
 __Run the drive program main.py__
